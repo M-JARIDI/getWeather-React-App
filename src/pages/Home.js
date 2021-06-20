@@ -7,27 +7,25 @@ import CountryInput from "../components/CountryInput";
 import { getTemperature } from "../utils/utils";
 import { Container, Button } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
-// import { makeStyles } from "@material-ui/core/styles";
-import "./Home.css";
+import { makeStyles } from "@material-ui/core/styles";
 
-// const useStyles = makeStyles({
-//   root: {
-//     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-//     border: 0,
-//     borderRadius: 3,
-//     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-//     color: "white",
-//     height: 48,
-//     padding: "0 30px",
-//   },
-// });
+const useStyles = makeStyles({
+  root: {
+    height: "80vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "4px solid red",
+  },
+  button: { padding: "1rem", fontWeight: "bold" },
+});
 
 export default function Home() {
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [temperature, setTemperature] = useState(null);
 
-  // const classes = useStyles();
+  const classes = useStyles();
   // const [loadingCountries, setLoadingCountries] = useState(false);
   // const [loadingCities, setLoadingCities] = useState(false);
 
@@ -43,13 +41,8 @@ export default function Home() {
     city !== "" && getTemperature(city, setTemperature);
   }, [city]);
 
-  // useEffect(() => {
-  //   temperature && dispatch(subscribeTemperature(temperature)); /*&&*/
-  //   // history.push("/temperature");
-  // }, [temperature, dispatch, history]);
-
   return (
-    <Container className="container">
+    <Container className={classes.root}>
       <CountryInput setCountry={setCountry} />
       <CityInput country={country} setCity={setCity} />
       <Button
@@ -57,6 +50,7 @@ export default function Home() {
         color="primary"
         endIcon={<SendIcon></SendIcon>}
         onClick={handleOnClickButton}
+        className={classes.button}
       >
         Search
       </Button>

@@ -20,7 +20,7 @@ export default function CityInput({ country, setCity }) {
         id="city"
         options={cities}
         getOptionLabel={(option) => option}
-        style={{ width: 300 }}
+        style={{ width: 300, marginRight: 10 }}
         onChange={handleInputChange}
         renderInput={(params) => (
           <TextField {...params} label="city" variant="outlined" />
