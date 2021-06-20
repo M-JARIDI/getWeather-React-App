@@ -1,7 +1,24 @@
 import axios from "axios";
+
 const API_KEY = process.env.REACT_APP_API_WEATHER_MAP_KEY;
 const URL_CITIES = "https://countriesnow.space/api/v0.1/countries/cities";
+const URL_COUNTRIES = "https://countriesnow.space/api/v0.1/countries";
 const URL_TEMPERATURE = `https://api.openweathermap.org/data/2.5/weather?`;
+
+export const getCountries = async (setCountries) => {
+  await axios
+    .get(URL_COUNTRIES)
+    .then((response) => {
+      let countriesTemp = [];
+      response.data.data.map((countryItem) =>
+        countriesTemp.push(countryItem.country)
+      );
+      setCountries(countriesTemp);
+    })
+    .catch((error) => {
+      console.log(`error`, error);
+    });
+};
 
 export const getCities = async (country, setCities) => {
   await axios

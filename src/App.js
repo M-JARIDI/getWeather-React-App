@@ -7,28 +7,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container } from "@material-ui/core";
 
 export default function App() {
-  function select(state) {
-    return state.temperature;
-  }
-
-  let currentValue;
-  function handleChange() {
-    let previousValue = currentValue;
-    currentValue = select(store.getState());
-
-    if (previousValue !== currentValue) {
-      console.log(
-        "Some deep nested property changed from",
-        previousValue,
-        "to",
-        currentValue
-      );
-    }
-  }
-
-  const unsubscribe = store.subscribe(handleChange);
-  // unsubscribe();
-
   return (
     <Provider store={store}>
       <Container>

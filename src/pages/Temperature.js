@@ -1,20 +1,27 @@
-import React, { useEffect } from "react";
-import { Container } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import React from "react";
+import { Container, Button } from "@material-ui/core";
+import { useSelector, useDispatch } from "react-redux";
 import { temperatureState } from "../redux/redux-slices/temperatureSlice";
-import { useDispatch } from "react-redux";
+import { unsubscribeTemperature } from "../redux/redux-slices/temperatureSlice";
+import { useHistory } from "react-router-dom";
 // import { subscribeTemperature } from "../redux/redux-slices/temperatureSlice";
 
 export default function Temperature() {
-  const dispatch = useDispatch();
   const temperature = useSelector(temperatureState);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-  useEffect(() => {
-    console.log(`temperature`, temperature);
-  }, [temperature]);
+  const handleOnClickButton = () => {
+    dispatch(unsubscribeTemperature());
+    history.push("/");
+  };
 
-  // useEffect(() => {
-  //   dispatch(subscribeTemperature(790));
-  // }, []);
-  return <Container>{`temperature : ${temperature}`}</Container>;
+  return (
+    <Container>
+      {`temperature : ${temperature}`}
+      <Button variant="contained" color="primary" onClick={handleOnClickButton}>
+        Back
+      </Button>
+    </Container>
+  );
 }

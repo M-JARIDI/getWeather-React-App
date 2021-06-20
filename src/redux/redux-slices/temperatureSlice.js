@@ -5,12 +5,10 @@ export const temperatureSlice = createSlice({
   initialState: 0,
   reducers: {
     subscribeTemperature: (state, action) => {
-      // console.log(`action.payload`, action.payload);
       state = action.payload;
-      console.log(`state :`, state);
       return state;
     },
-    unsubscribeTemperature: (state) => (state = 0), // to reinitialiser ...
+    unsubscribeTemperature: (state) => (state = 0), // to reinitialiser notre state ...
   },
 });
 
