@@ -1,10 +1,11 @@
 import React from "react";
-import { Container, Button } from "@material-ui/core";
+import { Container, Button, Typography } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
-import { temperatureState } from "../redux/redux-slices/temperatureSlice";
-import { unsubscribeTemperature } from "../redux/redux-slices/temperatureSlice";
+import {
+  temperatureState,
+  unsubscribeTemperature,
+} from "../redux/redux-slices/temperatureSlice";
 import { useHistory } from "react-router-dom";
-// import { subscribeTemperature } from "../redux/redux-slices/temperatureSlice";
 
 export default function Temperature() {
   const temperature = useSelector(temperatureState);
@@ -18,7 +19,11 @@ export default function Temperature() {
 
   return (
     <Container>
-      {`temperature : ${temperature}`}
+      {temperature <= 15 ? (
+        <Typography> il fait froid</Typography>
+      ) : (
+        <Typography>il fait chaud</Typography>
+      )}
       <Button variant="contained" color="primary" onClick={handleOnClickButton}>
         Back
       </Button>

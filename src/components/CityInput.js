@@ -6,10 +6,12 @@ import { Autocomplete } from "@material-ui/lab";
 export default function CityInput({ country, setCity }) {
   const [cities, setCities] = useState([]);
 
-  useEffect(() => country && getCities(country, setCities), [country]);
+  useEffect(() => {
+    country && getCities(country, setCities);
+  }, [country]);
 
   const handleInputChange = (e) => {
-    setCity(cities[e.target.getAttribute("data-option-index")]);
+    setCity(e.target.innerText);
   };
 
   return (

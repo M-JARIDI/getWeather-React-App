@@ -6,10 +6,10 @@ import { Autocomplete } from "@material-ui/lab";
 export default function CountryInput({ setCountry }) {
   const [countries, setCountries] = useState([]);
 
-  useEffect(() => getCountries(setCountries), [countries]);
+  useEffect(() => getCountries(setCountries), []);
 
   const handleInputChange = (e) => {
-    setCountry(countries[e.target.getAttribute("data-option-index")]);
+    setCountry(e.target.innerText);
   };
 
   return (
