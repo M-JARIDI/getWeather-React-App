@@ -1,3 +1,18 @@
+# getWeather-react-app
+
+A simple React weather app that displays weather information from the OpenWeatherMap API.
+See it live https://get-weather-react-app.herokuapp.com/.
+
+## Getting started
+
+- Sign up over at [openweathermap.org](https://openweathermap.org/appid) to get an API key.
+- Fork the project and clone it locally.
+- Create a file at the root of the project called `.env` with the following contents:
+
+```sh
+REACT_APP_API_WEATHER_MAP_KEY = The API key you obtained from openweathermap.org
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +83,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

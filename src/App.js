@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import store from "./redux/redux-store/store";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container } from "@material-ui/core";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             <Route exact path="/temperature" component={Temperature} />
           </Switch>
         </Router>
+        <Footer />
       </Container>
     </Provider>
   );

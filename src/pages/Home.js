@@ -11,13 +11,17 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   root: {
-    height: "80vh",
+    height: "100vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    border: "4px solid red",
+    backdropFilter: "blur(5px)",
   },
-  button: { padding: "1rem", fontWeight: "bold" },
+  button: {
+    padding: "1rem",
+    fontWeight: "bold",
+    boxShadow: "0px 5px 10px black",
+  },
 });
 
 export default function Home() {
@@ -42,18 +46,21 @@ export default function Home() {
   }, [city]);
 
   return (
-    <Container className={classes.root}>
-      <CountryInput setCountry={setCountry} />
-      <CityInput country={country} setCity={setCity} />
-      <Button
-        variant="contained"
-        color="primary"
-        endIcon={<SendIcon></SendIcon>}
-        onClick={handleOnClickButton}
-        className={classes.button}
-      >
-        Search
-      </Button>
+    <Container>
+      {/* Here you can find the current weather of a choosen city */}
+      <Container className={classes.root}>
+        <CountryInput setCountry={setCountry} />
+        <CityInput country={country} setCity={setCity} />
+        <Button
+          variant="contained"
+          color="primary"
+          endIcon={<SendIcon></SendIcon>}
+          onClick={handleOnClickButton}
+          className={classes.button}
+        >
+          Search
+        </Button>
+      </Container>
     </Container>
   );
 }
