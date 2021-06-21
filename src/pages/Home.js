@@ -5,17 +5,31 @@ import { subscribeTemperature } from "../redux/redux-slices/temperatureSlice";
 import CityInput from "../components/CityInput";
 import CountryInput from "../components/CountryInput";
 import { getTemperature } from "../utils/utils";
-import { Container, Button } from "@material-ui/core";
+import { Container, Button, Typography } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   root: {
-    height: "100vh",
+    height: "92vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    padding: "4rem",
+    alignItems: "center",
+    backdropFilter: "blur(5px)",
+  },
+  typography: {
+    fontWeight: "bold",
+    fontSize: "2rem",
+    color: "black",
+    textAlign: "center",
+  },
+  inputsContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backdropFilter: "blur(5px)",
+    marginTop: "1rem",
   },
   button: {
     padding: "1rem",
@@ -46,9 +60,11 @@ export default function Home() {
   }, [city]);
 
   return (
-    <Container>
-      {/* Here you can find the current weather of a choosen city */}
-      <Container className={classes.root}>
+    <Container className={classes.root}>
+      <Typography className={classes.typography}>
+        Here you can find the current weather of all cities of the world
+      </Typography>
+      <Container className={classes.inputsContainer}>
         <CountryInput setCountry={setCountry} />
         <CityInput country={country} setCity={setCity} />
         <Button

@@ -10,17 +10,31 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   root: {
-    height: "100vh",
+    height: "92vh",
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     backdropFilter: "blur(5px)",
-    border: "2px solid red",
   },
-  froid: {
-    backgroundColor: "blue",
+  typography: {
+    fontWeight: "bold",
+    fontSize: "2rem",
+    color: "black",
+    textAlign: "center",
   },
-  chaud: {
+  cold: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "lightblue",
+  },
+  hot: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "red",
   },
   button: {
@@ -43,10 +57,10 @@ export default function Temperature() {
   };
 
   return (
-    <Container className={temperature <= 15 ? classes.froid : classes.chaud}>
-      <Container className={classes.root}>
+    <Container className={classes.root}>
+      <Container className={temperature <= 15 ? classes.cold : classes.hot}>
         {temperature <= 15 ? (
-          <Typography> il fait froid</Typography>
+          <Typography className={classes.typography}> il fait froid</Typography>
         ) : (
           <Typography>il fait chaud</Typography>
         )}
