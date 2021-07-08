@@ -1,7 +1,16 @@
 # getWeather-react-app
 
 A simple React weather app that displays weather information from the OpenWeatherMap API.
-See it live https://get-weather-react-app.herokuapp.com/.
+See it live [get-weather-react-app](https://get-weather-react-app.herokuapp.com/).
+
+### Exercise :
+
+The goal is to make a mini app in react, of two pages.
+
+- First page: The first page contains a text field allowing the user to write the name of a city, and to validate his choice.
+- Second page: The second page should display "It's cold" if the temperature in the city in question is <15 ° C, and "It's hot" if the temperature is ≥ 15 ° C. The background color must also change according to this temperature: cold color if it is cold, warm if it is hot.
+- Resources: The API to use to know the temperature will be [openweathermap.org](https://openweathermap.org/).
+- Constraints: The functionality to know the temperature will be done with a "hook", imagining that it could be reused elsewhere.
 
 ## Getting started
 
@@ -83,4 +92,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
