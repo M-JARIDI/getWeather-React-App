@@ -6,7 +6,7 @@ const useStyles = makeStyles({
   root: {
     color: "black",
     fontWeight: "bold",
-    fontSize: "1.5rem",
+    fontSize: "4vh",
     textAlign: "center",
   },
 });

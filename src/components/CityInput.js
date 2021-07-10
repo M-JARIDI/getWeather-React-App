@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   childs: {
     boxShadow: "0px 5px 10px black",
+    minWidth: 250,
   },
 });
 
@@ -28,7 +29,7 @@ export default function CityInput({ country, setCity }) {
         id="city"
         options={cities}
         getOptionLabel={(option) => option}
-        style={{ width: 300, marginRight: 10 }}
+        style={{ margin: "0px 5px 15px" }}
         onChange={handleInputChange}
         renderInput={(params) => (
           <TextField

@@ -11,7 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   root: {
-    height: "92vh",
+    minHeight: "94vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -21,20 +21,22 @@ const useStyles = makeStyles({
   },
   typography: {
     fontWeight: "bold",
-    fontSize: "2rem",
+    fontSize: "clamp(3.5vh, 2.6vw, 15vw);",
     color: "black",
     textAlign: "center",
   },
   inputsContainer: {
     display: "flex",
+    flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center",
     marginTop: "1rem",
   },
   button: {
-    padding: "1rem",
+    padding: "clamp(12px, 5%, 15px);",
     fontWeight: "bold",
     boxShadow: "0px 5px 10px black",
+    margin: "0px 5px 15px",
   },
 });
 
